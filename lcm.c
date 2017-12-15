@@ -80,7 +80,7 @@ mpz_t * lcm(const mpz_t a, const mpz_t b) {
 
 
 // call apply_free() on result
-static mpz_t * apply(char **nums, int len, mpz_t*(*gfptr)(const mpz_t a, const mpz_t b), void (*gfree)(mpz_t *to_free) ) {
+static mpz_t * apply(const char **nums, int len, mpz_t*(*gfptr)(const mpz_t a, const mpz_t b), void (*gfree)(mpz_t *to_free) ) {
 
 	mpz_t *vnum, *res;
 
@@ -151,7 +151,7 @@ _usage:
 	}
 
 	// skip progname & opt
-	mpz_t *to_free = apply(argv+2, argc-2, fptr_purpose, fptr_free);
+	mpz_t *to_free = apply((const char **)argv+2, argc-2, fptr_purpose, fptr_free);
 
 	printf("%s(", argv[1]+1); // skip '-' from opt
 	for (int i = 2; i < argc; i++)
