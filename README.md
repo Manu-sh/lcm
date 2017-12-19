@@ -1,5 +1,7 @@
 # lcm
-lcm &amp; gcd using libgmp
+lcm &amp; gcd using libgmp.
+
+_This is just for fun_, there are official implementation of gcd and lcm: https://gmplib.org/manual/Number-Theoretic-Functions.html#index-GCD-functions
 
 ```bash
 # build
